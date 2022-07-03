@@ -58,12 +58,12 @@ class DogCardAdapter(
 
         // TODO: Null should not be passed into the view holder. This should be updated to reflect
         //  the inflated layout.
-        val layout = LayoutInflater.from(context!!).inflate(
+        val layout = LayoutInflater.from(parent.context).inflate(
             if (layout == Layout.GRID)
                 R.layout.grid_list_item
             else
                 R.layout.vertical_horizontal_list_item,
-            parent
+            null
         )
 
         return DogCardViewHolder(layout)
