@@ -15,6 +15,7 @@
 */
 package com.example.dogglers
 
+import android.content.pm.ActivityInfo
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.swipeLeft
@@ -39,6 +40,9 @@ class HorizontalListTests : BaseTest() {
 
     @Test
     fun `horizontal_scroll_content_at_first_position`() {
+        activityRule.scenario.onActivity {
+            it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        }
         checkFirstPosition()
     }
 
@@ -52,6 +56,8 @@ class HorizontalListTests : BaseTest() {
     @Test
     fun `horizontal_scrolling`() {
         onView(withId(R.id.horizontal_recycler_view))
+            .perform(swipeLeft())
+            .perform(swipeLeft())
             .perform(swipeLeft())
         onView(withText("Frankie")).check(matches(isDisplayed()))
     }
