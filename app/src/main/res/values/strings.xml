@@ -20,4 +20,6 @@
     <string name="vertical">Vertical</string>
     <string name="horizontal">Horizontal</string>
     <string name="grid">Grid</string>
+    <string name="image_view_for_vertical_view">Image View for Vertical View</string>
+    <string name="image_view_for_vertical_horizontal_list">Image view for vertical-horizontal list</string>
 </resources>
